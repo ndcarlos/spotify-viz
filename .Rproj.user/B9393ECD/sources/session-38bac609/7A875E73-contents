@@ -35,3 +35,4 @@ server <- function(input, output, session) {
       theme_minimal() +
       labs(title = "Play Trends Over Time", x = "Date", y = "Plays")
   })
+}

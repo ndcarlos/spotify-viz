@@ -3,7 +3,7 @@
     "path": "~/Documents/Projects/R/spotify-viz/ui.R",
     "project_path": "ui.R",
     "type": "r_source",
-    "hash": "2471901577",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1736993127284.0,
@@ -17,11 +17,11 @@
         "scrollLine": "2"
     },
     "folds": "",
-    "lastKnownWriteTime": 1737047394,
+    "lastKnownWriteTime": 1737047938,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1737047394152,
+    "last_content_update": 1737047938,
     "read_only": false,
     "read_only_alternatives": []
 }
