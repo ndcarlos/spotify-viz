@@ -1,6 +1,13 @@
 library(shiny)
 
 server <- function(input, output, session) {
+  
+  updateSelectizeInput(
+    session,
+    inputId = "my_input",
+    choices = c("Option 1", "Option 2", "Option 3"),
+    server = TRUE
+  )
   # Reactive dataset filtered by user inputs
   filtered_data <- reactive({
     # Observe

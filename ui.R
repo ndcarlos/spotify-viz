@@ -10,8 +10,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       selectizeInput("artist", "Select Artist(s):", choices = NULL, multiple = TRUE,
-                     options = list(placeholder = 'Start typing an artist name...'),
-                     server = TRUE),
+                     options = list(placeholder = 'Start typing an artist name...')),
       selectInput("genre", "Select Genre(s):", choices = NULL, multiple = TRUE),
       selectInput("location", "Select Artist Location(s):", choices = NULL, multiple = TRUE),
       dateRangeInput("timeframe", "Select Time Frame:"),

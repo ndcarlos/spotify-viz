@@ -21,4 +21,3 @@ get_top_artists <- function() {
   return(top_artist_names)
 }
 
-selectize_artist <- get_top_artists(access_token)
