@@ -3,6 +3,8 @@ library(shiny)
 server <- function(input, output, session) {
   # Reactive dataset filtered by user inputs
   filtered_data <- reactive({
+    # Observe
+    
     # Assume `spotify_data` is your dataset
     spotify_data %>%
       filter(
@@ -16,15 +18,23 @@ server <- function(input, output, session) {
   })
   
   
+  # Display summary of filtered data
+  output$summary <- renderText({
+    paste("Selected", nrow(filtered_data()), "rows from the dataset.")
+  })
   
-  output$distPlot <- renderPlot({
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2]
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white',
-         xlab = 'Waiting time to next eruption (in mins)',
-         main = 'Histogram of waiting times')
+  # Create visualizations
+  output$plot1 <- renderPlot({
+    ggplot(filtered_data(), aes(x = artist, y = plays)) +
+      geom_col() +
+      theme_minimal() +
+      labs(title = "Plays by Artist", x = "Artist", y = "Plays")
+  })
+  
+  output$plot2 <- renderPlot({
+    ggplot(filtered_data(), aes(x = date, y = plays, color = genre)) +
+      geom_line() +
+      theme_minimal() +
+      labs(title = "Play Trends Over Time", x = "Date", y = "Plays")
   })
 }

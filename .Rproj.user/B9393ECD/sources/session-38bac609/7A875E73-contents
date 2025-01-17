@@ -3,6 +3,8 @@ library(shiny)
 server <- function(input, output, session) {
   # Reactive dataset filtered by user inputs
   filtered_data <- reactive({
+    # Observe
+    
     # Assume `spotify_data` is your dataset
     spotify_data %>%
       filter(

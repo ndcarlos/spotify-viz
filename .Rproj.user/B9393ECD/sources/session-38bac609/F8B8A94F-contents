@@ -9,6 +9,7 @@
 
 source('ui.R')
 source('server.R')
+source('global.R')
 
 # Define UI for application that draws a histogram
 
@@ -17,4 +18,4 @@ source('server.R')
 
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server, global = global)

@@ -9,9 +9,10 @@ ui <- fluidPage(
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
     sidebarPanel(
-      selectInput("artist", "Select Artist(s):", choices = NULL, multiple = TRUE),
+      selectizeInput("artist", "Select Artist(s):", choices = NULL, multiple = TRUE,
+                     options = list(placeholder = 'Start typing an artist name...'),
+                     server = TRUE),
       selectInput("genre", "Select Genre(s):", choices = NULL, multiple = TRUE),
-      numericInput("plays", "Number of Recent Plays:", value = 10, min = 1, step = 1),
       selectInput("location", "Select Artist Location(s):", choices = NULL, multiple = TRUE),
       dateRangeInput("timeframe", "Select Time Frame:"),
       numericInput("rows", "Number of Rows Returned:", value = 10, min = 1, step = 1)
